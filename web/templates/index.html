@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WallGen - 4K Wallpaper Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WallGen</h1>
+            <p>Transform your 4K images into perfectly optimized wallpapers for every device.</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="drop-zone">
+                <div class="icon">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 16L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 11L12 8 15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 16H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Drag & Drop your 4K Image</h3>
+                <p>or <span class="browse-btn">browse files</span></p>
+                <input type="file" id="file-input" accept="image/*" hidden>
+            </div>
+
+            <div class="options">
+                <h3>Target Resolutions</h3>
+                <div class="checkbox-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="1366x768" checked>
+                        <span class="checkmark"></span>
+                        1366x768 (Laptop)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="1920x1080" checked>
+                        <span class="checkmark"></span>
+                        1920x1080 (FHD)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="2560x1440" checked>
+                        <span class="checkmark"></span>
+                        2560x1440 (QHD)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="3840x2160" checked>
+                        <span class="checkmark"></span>
+                        3840x2160 (4K)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="1080x2400" checked>
+                        <span class="checkmark"></span>
+                        1080x2400 (Mobile)
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="res" value="1440x3200" checked>
+                        <span class="checkmark"></span>
+                        1440x3200 (Mobile High)
+                    </label>
+                </div>
+            </div>
+
+            <button id="generate-btn" class="primary-btn">Generate Wallpapers</button>
+
+            <div id="progress-container" class="hidden">
+                <div class="loader"></div>
+                <p>Processing high-quality downscaling...</p>
+            </div>
+
+            <div id="results-area" class="hidden">
+                <h2>Your Wallpapers</h2>
+                <div class="gallery" id="gallery">
+                    <!-- Results will be injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

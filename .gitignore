@@ -1,0 +1,14 @@
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+app
+server
+
+# Directories
+uploads/
+web/static/generated/
+tmp/
+.vscode/
+.idea/
